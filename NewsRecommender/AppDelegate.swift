@@ -16,6 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let tabBarController = UIApplication.shared.delegate?.window??.rootViewController as! UITabBarController
+        let savedCategories = NewsCategoryManager.getSavedCategories()
+        if savedCategories.count == 0 {
+            let vc = PickCategoriesViewController.initWithStoryBoard(storyBoardName: "Main", identifier: "PickCategoriesViewController") as! PickCategoriesViewController
+            vc.setUpNavigationbar()
+            let nav = UINavigationController.init(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            self.window?.makeKeyAndVisible()
+            tabBarController.present(nav, animated: true, completion: {})
+        }
+       
+        
         return true
     }
 
