@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +27,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             nav.modalPresentationStyle = .fullScreen
             self.window?.makeKeyAndVisible()
             tabBarController.present(nav, animated: true, completion: {})
+        }
+        else{
+            let realm = try! Realm()
+            let keyword = realm.objects(KeywordPreference.self)
+            if keyword.count == 0{
+                let vc = RateInitialNewsViewController.initWithStoryBoard(storyBoardName: "Main", identifier: "RateInitialNewsViewController") as! RateInitialNewsViewController
+                let nav = UINavigationController.init(rootViewController: vc)
+                nav.modalPresentationStyle = .fullScreen
+                self.window?.makeKeyAndVisible()
+                tabBarController.present(nav, animated: true, completion: {})
+            }
         }
        
         

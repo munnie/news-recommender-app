@@ -28,7 +28,17 @@ class PickCategoriesViewController: UIViewController {
     }
     
     @objc func nextTapped(){
-        
+        if pickedCategories.count > 0 {
+            NewsCategoryManager.saveCategories(data: pickedCategories)
+            let vc = RateInitialNewsViewController.initWithStoryBoard(storyBoardName: "Main", identifier: "RateInitialNewsViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else{
+            let alert = UIAlertController.init(title: nil, message: "Please pick at least 1 category", preferredStyle: .alert)
+            let cancelAction = UIAlertAction.init(title: "OK", style: .cancel, handler: nil)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     /*
     // MARK: - Navigation
@@ -66,14 +76,6 @@ extension PickCategoriesViewController: UICollectionViewDataSource, UICollection
         else{
             pickedCategories.append(category.name)
         }
-        
-        ServicesContainer.shared.loanServices().getNews(category:category.name,limit:5,onSuccess: { (array) in
-          
-          
-        }) { (error) in
-           
-        }
-        
         collectionView.reloadData()
     }
 }

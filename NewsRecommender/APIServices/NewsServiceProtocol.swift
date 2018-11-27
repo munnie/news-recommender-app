@@ -9,5 +9,6 @@
 import Foundation
 
 protocol NewsServiceProtocol {
+    func getNews(categories: Array<String>, limit:Int , onSuccess: @escaping (Array<News>) -> Void, onError: @escaping (Error) -> Void)
     func getNews(category: String, limit:Int , onSuccess: @escaping (Array<News>) -> Void, onError: @escaping (Error) -> Void)
 }

@@ -17,6 +17,11 @@
 		BA3859B121AB118A00AD256C /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859B021AB118A00AD256C /* News.swift */; };
 		BA3859B321AB173E00AD256C /* NewsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859B221AB173E00AD256C /* NewsService.swift */; };
 		BA3859B521AB25EF00AD256C /* ServiceContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859B421AB25EF00AD256C /* ServiceContainer.swift */; };
+		BA3859B921AC792800AD256C /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859B821AC792800AD256C /* NewsTableViewCell.swift */; };
+		BA3859BB21AC7A4500AD256C /* NewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA3859BA21AC7A4500AD256C /* NewsTableViewCell.xib */; };
+		BA3859BD21AC7C8E00AD256C /* RateInitialNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859BC21AC7C8E00AD256C /* RateInitialNewsViewController.swift */; };
+		BA3859C021AD498800AD256C /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859BF21AD498800AD256C /* Preference.swift */; };
+		BA3859C221AD67D200AD256C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859C121AD67D200AD256C /* WebViewController.swift */; };
 		BAD0523E21A341710070A868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0523D21A341710070A868 /* AppDelegate.swift */; };
 		BAD0524021A341710070A868 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0523F21A341710070A868 /* FirstViewController.swift */; };
 		BAD0524221A341710070A868 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0524121A341710070A868 /* SecondViewController.swift */; };
@@ -37,6 +42,11 @@
 		BA3859B021AB118A00AD256C /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		BA3859B221AB173E00AD256C /* NewsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsService.swift; sourceTree = "<group>"; };
 		BA3859B421AB25EF00AD256C /* ServiceContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceContainer.swift; sourceTree = "<group>"; };
+		BA3859B821AC792800AD256C /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		BA3859BA21AC7A4500AD256C /* NewsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsTableViewCell.xib; sourceTree = "<group>"; };
+		BA3859BC21AC7C8E00AD256C /* RateInitialNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateInitialNewsViewController.swift; sourceTree = "<group>"; };
+		BA3859BF21AD498800AD256C /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
+		BA3859C121AD67D200AD256C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		BAD0523A21A341710070A868 /* NewsRecommender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsRecommender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0523D21A341710070A868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD0523F21A341710070A868 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				BA3859AF21AB117B00AD256C /* Model */,
+				BA3859B621AC785300AD256C /* Views */,
+				BA3859B721AC785A00AD256C /* ViewControllers */,
 			);
 			path = DisplayNews;
 			sourceTree = "<group>";
@@ -101,6 +113,32 @@
 				BA3859B021AB118A00AD256C /* News.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BA3859B621AC785300AD256C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA3859B821AC792800AD256C /* NewsTableViewCell.swift */,
+				BA3859BA21AC7A4500AD256C /* NewsTableViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BA3859B721AC785A00AD256C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA3859BC21AC7C8E00AD256C /* RateInitialNewsViewController.swift */,
+				BA3859C121AD67D200AD256C /* WebViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BA3859BE21AD496A00AD256C /* Recommender */ = {
+			isa = PBXGroup;
+			children = (
+				BA3859BF21AD498800AD256C /* Preference.swift */,
+			);
+			path = Recommender;
 			sourceTree = "<group>";
 		};
 		BAD0523121A341710070A868 = {
@@ -124,6 +162,7 @@
 		BAD0523C21A341710070A868 /* NewsRecommender */ = {
 			isa = PBXGroup;
 			children = (
+				BA3859BE21AD496A00AD256C /* Recommender */,
 				BA3859A721AAB03C00AD256C /* Extension */,
 				BAD0525521A34E000070A868 /* Features */,
 				BAD0525421A343680070A868 /* APIServices */,
@@ -265,6 +304,7 @@
 				BAD0524A21A341730070A868 /* LaunchScreen.storyboard in Resources */,
 				BAD0524721A341730070A868 /* Assets.xcassets in Resources */,
 				BAD0524521A341710070A868 /* Main.storyboard in Resources */,
+				BA3859BB21AC7A4500AD256C /* NewsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,11 +321,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NewsRecommender/Pods-NewsRecommender-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 			);
@@ -294,11 +336,13 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 			);
@@ -338,16 +382,20 @@
 			files = (
 				BA3859A421A9F59500AD256C /* CategoryCollectionViewCell.swift in Sources */,
 				BA38599E21A9DE7000AD256C /* NewsServiceProtocol.swift in Sources */,
+				BA3859BD21AC7C8E00AD256C /* RateInitialNewsViewController.swift in Sources */,
 				BA3859AD21AAE56100AD256C /* UIViewControllerExtension.swift in Sources */,
 				BAD0524221A341710070A868 /* SecondViewController.swift in Sources */,
+				BA3859B921AC792800AD256C /* NewsTableViewCell.swift in Sources */,
 				BA3859A021A9E00D00AD256C /* NewsCategory.swift in Sources */,
 				BA3859A221A9F51500AD256C /* PickCategoriesViewController.swift in Sources */,
 				BAD0523E21A341710070A868 /* AppDelegate.swift in Sources */,
 				BAD0524021A341710070A868 /* FirstViewController.swift in Sources */,
+				BA3859C021AD498800AD256C /* Preference.swift in Sources */,
 				BA3859B121AB118A00AD256C /* News.swift in Sources */,
 				BA3859B521AB25EF00AD256C /* ServiceContainer.swift in Sources */,
 				BAD0525321A341D10070A868 /* Constants.swift in Sources */,
 				BA3859B321AB173E00AD256C /* NewsService.swift in Sources */,
+				BA3859C221AD67D200AD256C /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,4 +13,6 @@ target 'NewsRecommender' do
     pod 'SwiftyJSON', '~> 4.0'
     pod 'ObjectMapper'
     pod 'AlamofireObjectMapper'
+    pod "SkeletonView"
+    pod 'AlamofireImage', '~> 3.4'
 end

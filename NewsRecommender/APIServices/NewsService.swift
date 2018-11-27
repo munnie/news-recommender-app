@@ -12,10 +12,29 @@ import AlamofireObjectMapper
 
 class NewsService: NewsServiceProtocol {
     
+    func getNews(categories: Array<String>, limit: Int, onSuccess: @escaping (Array<News>) -> Void, onError: @escaping (Error) -> Void) {
+        var newsArray : Array<News> = []
+        var count = 0
+        
+        for category in categories{
+            self.getNews(category: category, limit: (limit/categories.count > 0) ? limit/categories.count : 1, onSuccess: {news in
+                newsArray.append(contentsOf: news)
+                count += 1
+                if count == categories.count{
+                    onSuccess(newsArray)
+                }
+            }, onError: {
+                error in onError(error)
+            })
+        }
+        
+    }
+    
     func getNews(category: String, limit:Int, onSuccess: @escaping (Array<News>) -> Void, onError: @escaping (Error) -> Void) {
         let url = Constants.newsBaseURL + Constants.topNewsPath
         var parameter : Dictionary<String, String> = [:]
         parameter.updateValue(String(limit), forKey: "pageSize")
+        parameter.updateValue("us", forKey: "country")
         if category != "" {
             parameter.updateValue(category, forKey: "category")
         }

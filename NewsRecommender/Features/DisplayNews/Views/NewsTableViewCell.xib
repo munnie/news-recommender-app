@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="377" id="aCk-tn-abJ" customClass="NewsTableViewCell" customModule="NewsRecommender" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="468" height="377"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aCk-tn-abJ" id="k7f-0o-vid">
+                <rect key="frame" x="0.0" y="0.0" width="468" height="376.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Moc-5b-dWh">
+                        <rect key="frame" x="0.0" y="0.0" width="468" height="176"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="176" id="DzK-QH-BLn"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPy-Cf-onL">
+                        <rect key="frame" x="10" y="192" width="448" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wqf-Rp-t9b">
+                        <rect key="frame" x="10" y="220.5" width="448" height="18"/>
+                        <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="15"/>
+                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DQs-qP-toz">
+                        <rect key="frame" x="25" y="254.5" width="418" height="40"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="hdl-w1-Y8B">
+                                <rect key="frame" x="194" y="5" width="30" height="30"/>
+                                <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hdl-w1-Y8B" secondAttribute="height" multiplier="1:1" id="zEj-Vt-mZ2"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="image.renderingMode" value="UIImageRenderingModeAlwaysTemplate"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qke-sl-BJ6">
+                                <rect key="frame" x="0.0" y="0.0" width="418" height="40"/>
+                                <connections>
+                                    <action selector="tapLikeButton" destination="aCk-tn-abJ" eventType="touchUpInside" id="rBe-4b-IJT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13559562612410278" green="0.72626506979695438" blue="0.35347735759687643" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qke-sl-BJ6" firstAttribute="leading" secondItem="DQs-qP-toz" secondAttribute="leading" id="003-Z0-7kb"/>
+                            <constraint firstItem="qke-sl-BJ6" firstAttribute="top" secondItem="9wg-HH-OWY" secondAttribute="top" id="AJ8-x0-jqq"/>
+                            <constraint firstAttribute="trailing" secondItem="qke-sl-BJ6" secondAttribute="trailing" id="Jqa-q7-hC8"/>
+                            <constraint firstItem="hdl-w1-Y8B" firstAttribute="centerX" secondItem="DQs-qP-toz" secondAttribute="centerX" id="MOq-Nb-njO"/>
+                            <constraint firstAttribute="bottom" secondItem="qke-sl-BJ6" secondAttribute="bottom" id="W1P-4p-lSF"/>
+                            <constraint firstAttribute="bottom" secondItem="hdl-w1-Y8B" secondAttribute="bottom" constant="5" id="X3Z-au-S8L"/>
+                            <constraint firstItem="hdl-w1-Y8B" firstAttribute="top" secondItem="DQs-qP-toz" secondAttribute="top" constant="5" id="egV-Gn-GMr"/>
+                            <constraint firstAttribute="height" constant="40" id="oVo-jz-tDj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9wg-HH-OWY"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yri-W7-l8a">
+                        <rect key="frame" x="25" y="302.5" width="418" height="40"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dislike" translatesAutoresizingMaskIntoConstraints="NO" id="413-Ti-n0P">
+                                <rect key="frame" x="194" y="5" width="30" height="30"/>
+                                <color key="tintColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="413-Ti-n0P" secondAttribute="height" multiplier="1:1" id="G9f-oZ-jyt"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vh-3A-YwN">
+                                <rect key="frame" x="0.0" y="0.0" width="418" height="40"/>
+                                <connections>
+                                    <action selector="tapDislikeButton" destination="aCk-tn-abJ" eventType="touchUpInside" id="ltb-cH-XN4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.72626506979695438" green="0.21488141125245322" blue="0.1528910589415057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Vh-3A-YwN" firstAttribute="top" secondItem="Yri-W7-l8a" secondAttribute="top" id="0lK-6M-3rN"/>
+                            <constraint firstItem="413-Ti-n0P" firstAttribute="centerX" secondItem="Yri-W7-l8a" secondAttribute="centerX" id="324-La-Dwt"/>
+                            <constraint firstAttribute="height" constant="40" id="I63-vN-2qw"/>
+                            <constraint firstItem="juN-OK-K66" firstAttribute="bottom" secondItem="3Vh-3A-YwN" secondAttribute="bottom" id="NuA-dM-WpO"/>
+                            <constraint firstItem="3Vh-3A-YwN" firstAttribute="leading" secondItem="juN-OK-K66" secondAttribute="leading" id="cMP-h2-3yY"/>
+                            <constraint firstItem="3Vh-3A-YwN" firstAttribute="trailing" secondItem="juN-OK-K66" secondAttribute="trailing" id="eNz-ti-TVE"/>
+                            <constraint firstItem="413-Ti-n0P" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Yri-W7-l8a" secondAttribute="top" constant="5" id="pUp-pp-kMH"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="413-Ti-n0P" secondAttribute="bottom" constant="5" id="uWw-zd-lKN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="juN-OK-K66"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="UPy-Cf-onL" secondAttribute="trailing" constant="10" id="7v9-px-7bJ"/>
+                    <constraint firstItem="Wqf-Rp-t9b" firstAttribute="leading" secondItem="k7f-0o-vid" secondAttribute="leading" constant="10" id="9be-EL-eIu"/>
+                    <constraint firstItem="Yri-W7-l8a" firstAttribute="top" secondItem="DQs-qP-toz" secondAttribute="bottom" constant="8" id="FP3-6t-lFm"/>
+                    <constraint firstItem="UPy-Cf-onL" firstAttribute="leading" secondItem="k7f-0o-vid" secondAttribute="leading" constant="10" id="HvR-ob-HIf"/>
+                    <constraint firstItem="UPy-Cf-onL" firstAttribute="top" secondItem="Moc-5b-dWh" secondAttribute="bottom" constant="16" id="Igv-fN-0RL"/>
+                    <constraint firstAttribute="trailing" secondItem="Moc-5b-dWh" secondAttribute="trailing" id="Lie-It-6GO"/>
+                    <constraint firstAttribute="trailing" secondItem="DQs-qP-toz" secondAttribute="trailing" constant="25" id="Ma9-OI-qpy"/>
+                    <constraint firstItem="Moc-5b-dWh" firstAttribute="leading" secondItem="k7f-0o-vid" secondAttribute="leading" id="QPe-Mc-qXD"/>
+                    <constraint firstItem="DQs-qP-toz" firstAttribute="top" secondItem="Wqf-Rp-t9b" secondAttribute="bottom" constant="16" id="VaZ-rO-Yea"/>
+                    <constraint firstItem="Yri-W7-l8a" firstAttribute="leading" secondItem="k7f-0o-vid" secondAttribute="leading" constant="25" id="ZhG-8Y-xLA"/>
+                    <constraint firstItem="Wqf-Rp-t9b" firstAttribute="top" secondItem="UPy-Cf-onL" secondAttribute="bottom" constant="8" id="cnY-bg-emA"/>
+                    <constraint firstItem="Moc-5b-dWh" firstAttribute="top" secondItem="k7f-0o-vid" secondAttribute="top" id="jMy-Ll-T6o"/>
+                    <constraint firstAttribute="trailing" secondItem="Yri-W7-l8a" secondAttribute="trailing" constant="25" id="lu0-JT-n6a"/>
+                    <constraint firstAttribute="bottom" secondItem="Yri-W7-l8a" secondAttribute="bottom" priority="250" constant="8" id="qDC-bS-aUg"/>
+                    <constraint firstAttribute="trailing" secondItem="Wqf-Rp-t9b" secondAttribute="trailing" constant="10" id="rpu-s3-wcC"/>
+                    <constraint firstItem="DQs-qP-toz" firstAttribute="leading" secondItem="k7f-0o-vid" secondAttribute="leading" constant="25" id="skb-LU-RZf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="contentLabel" destination="Wqf-Rp-t9b" id="O1y-3H-Y43"/>
+                <outlet property="dislikeButton" destination="Yri-W7-l8a" id="pHb-s4-6dS"/>
+                <outlet property="dislikeButtonHeight" destination="I63-vN-2qw" id="5v0-SJ-5GK"/>
+                <outlet property="dislikeImageView" destination="413-Ti-n0P" id="xZk-nM-2y8"/>
+                <outlet property="imageViewHeight" destination="DzK-QH-BLn" id="lgl-1B-kEP"/>
+                <outlet property="imgView" destination="Moc-5b-dWh" id="5wv-cy-Fpz"/>
+                <outlet property="likeButton" destination="DQs-qP-toz" id="BXF-fD-aDs"/>
+                <outlet property="likeImageView" destination="hdl-w1-Y8B" id="Bqc-Mm-vL7"/>
+                <outlet property="titleLabel" destination="UPy-Cf-onL" id="GLE-qP-uQU"/>
+            </connections>
+            <point key="canvasLocation" x="57.600000000000001" y="186.65667166416793"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="dislike" width="256" height="256"/>
+        <image name="like" width="256" height="256"/>
+    </resources>
+</document>

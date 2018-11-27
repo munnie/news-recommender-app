@@ -32,6 +32,7 @@
                     </collectionView>
                     <connections>
                         <outlet property="collectionView" destination="2vT-fD-KSr" id="30i-qM-FdB"/>
+                        <segue destination="yaI-vr-Yzh" kind="showDetail" id="ALu-3L-1Bl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGG-yM-v0J" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,6 +109,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Rate Initial News View Controller-->
+        <scene sceneID="9D0-1Q-0vr">
+            <objects>
+                <viewController storyboardIdentifier="RateInitialNewsViewController" id="yaI-vr-Yzh" customClass="RateInitialNewsViewController" customModule="NewsRecommender" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="WwT-M5-Ac3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <connections>
+                            <outlet property="dataSource" destination="yaI-vr-Yzh" id="Roe-86-fTS"/>
+                            <outlet property="delegate" destination="yaI-vr-Yzh" id="Sd3-Zf-HML"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="WwT-M5-Ac3" id="Rqg-XO-5lq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Nb-G7-QXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="-1020"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="1Ht-Fj-eil">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="KIm-Cy-ifn" customClass="WebViewController" customModule="NewsRecommender" customModuleProvider="target" sceneMemberID="viewController">
+                    <wkWebView key="view" contentMode="scaleToFill" id="7O7-Gf-Z9l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <wkWebViewConfiguration key="configuration">
+                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                            <wkPreferences key="preferences"/>
+                        </wkWebViewConfiguration>
+                    </wkWebView>
+                    <connections>
+                        <outlet property="webView" destination="7O7-Gf-Z9l" id="l6l-ih-eQh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qIx-7S-PJB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2057" y="-1020"/>
         </scene>
     </scenes>
     <resources>
