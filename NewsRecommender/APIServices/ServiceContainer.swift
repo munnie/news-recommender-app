@@ -19,10 +19,17 @@ class ServicesContainer: NSObject {
         container.register(NewsServiceProtocol.self) { _ in
             return NewsService()
         }
+        container.register(KeywordServiceProtocol.self) { _ in
+            return KeywordService()
+        }
     }
     
-    func loanServices() -> NewsServiceProtocol {
+    func newsServices() -> NewsServiceProtocol {
         return container.resolve(NewsServiceProtocol.self)!
+    }
+    
+    func keywordServices() -> KeywordServiceProtocol {
+        return container.resolve(KeywordServiceProtocol.self)!
     }
     
 }

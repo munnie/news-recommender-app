@@ -27,7 +27,7 @@ class RateInitialNewsViewController: UIViewController {
         super.viewDidAppear(animated)
         let categories = NewsCategoryManager.getSavedCategories()
         
-        ServicesContainer.shared.loanServices().getNews(categories:categories,limit:20,onSuccess: { [weak self] array in
+        ServicesContainer.shared.newsServices().getNews(categories:categories,limit:20,onSuccess: { [weak self] array in
                 self?.allNews = array
                 self?.tableView?.reloadData()
         }) { (error) in
@@ -43,8 +43,8 @@ class RateInitialNewsViewController: UIViewController {
     }
     
     @objc func doneTapped(){
-        if pickedNews.count >= 5 {
-            
+        if pickedNews.count >= 1 {
+            KeywordPreferenceManager.processNews(newsArray: pickedNews)
         }
         else{
             let alert = UIAlertController.init(title: nil, message: "Please pick at least 5 news", preferredStyle: .alert)
@@ -110,6 +110,9 @@ extension RateInitialNewsViewController: NewsTableViewCellDelegate{
             pickedNews.append(news)
         }
         tableView?.reloadData()
+            
+            
+            
         }
     }
     

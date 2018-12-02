@@ -27,13 +27,13 @@ class NewsCategoryManager: NSObject{
     
     static let sharedInstance = NewsCategoryManager()
     lazy var allCategories: Array<NewsCategory> = {
-        return [NewsCategory.init(name: NewsCategoryManager.kCategoryBusiness, displayName: "Business", image: ""),
-                NewsCategory.init(name: NewsCategoryManager.kCategoryEntertainment, displayName: "Entertainment", image: ""),
+        return [NewsCategory.init(name: NewsCategoryManager.kCategoryBusiness, displayName: "Business", image: "business"),
+                NewsCategory.init(name: NewsCategoryManager.kCategoryEntertainment, displayName: "Entertainment", image: "entertainment"),
                 NewsCategory.init(name: NewsCategoryManager.kCategoryGeneral, displayName: "General", image: "general"),
-                NewsCategory.init(name: NewsCategoryManager.kCategoryHealth, displayName: "Health", image: ""),
-                NewsCategory.init(name: NewsCategoryManager.kCategoryScience, displayName: "Science", image: ""),
-                NewsCategory.init(name: NewsCategoryManager.kCategorySports, displayName: "Sports", image: ""),
-                NewsCategory.init(name: NewsCategoryManager.kCategoryTechnology, displayName: "Technology", image: "")]
+                NewsCategory.init(name: NewsCategoryManager.kCategoryHealth, displayName: "Health", image: "health"),
+                NewsCategory.init(name: NewsCategoryManager.kCategoryScience, displayName: "Science", image: "science"),
+                NewsCategory.init(name: NewsCategoryManager.kCategorySports, displayName: "Sports", image: "sport"),
+                NewsCategory.init(name: NewsCategoryManager.kCategoryTechnology, displayName: "Technology", image: "technology")]
     }()
     
     class func saveCategories(data: Array<String>){

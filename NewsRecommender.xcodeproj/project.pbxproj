@@ -22,6 +22,9 @@
 		BA3859BD21AC7C8E00AD256C /* RateInitialNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859BC21AC7C8E00AD256C /* RateInitialNewsViewController.swift */; };
 		BA3859C021AD498800AD256C /* Preference.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859BF21AD498800AD256C /* Preference.swift */; };
 		BA3859C221AD67D200AD256C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859C121AD67D200AD256C /* WebViewController.swift */; };
+		BA44594F21B19006009FDE48 /* KeywordServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44594E21B19006009FDE48 /* KeywordServiceProtocol.swift */; };
+		BA44595121B19015009FDE48 /* KeywordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44595021B19015009FDE48 /* KeywordService.swift */; };
+		BAB1314D21B455D500097004 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB1314C21B455D500097004 /* StringExtension.swift */; };
 		BAD0523E21A341710070A868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0523D21A341710070A868 /* AppDelegate.swift */; };
 		BAD0524021A341710070A868 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0523F21A341710070A868 /* FirstViewController.swift */; };
 		BAD0524221A341710070A868 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0524121A341710070A868 /* SecondViewController.swift */; };
@@ -47,6 +50,9 @@
 		BA3859BC21AC7C8E00AD256C /* RateInitialNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateInitialNewsViewController.swift; sourceTree = "<group>"; };
 		BA3859BF21AD498800AD256C /* Preference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preference.swift; sourceTree = "<group>"; };
 		BA3859C121AD67D200AD256C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		BA44594E21B19006009FDE48 /* KeywordServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeywordServiceProtocol.swift; path = NewsRecommender/KeywordServiceProtocol.swift; sourceTree = SOURCE_ROOT; };
+		BA44595021B19015009FDE48 /* KeywordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordService.swift; sourceTree = "<group>"; };
+		BAB1314C21B455D500097004 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		BAD0523A21A341710070A868 /* NewsRecommender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsRecommender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0523D21A341710070A868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAD0523F21A341710070A868 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				BA3859AC21AAE56100AD256C /* UIViewControllerExtension.swift */,
+				BAB1314C21B455D500097004 /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -191,6 +198,8 @@
 			children = (
 				BA38599D21A9DE7000AD256C /* NewsServiceProtocol.swift */,
 				BA3859B221AB173E00AD256C /* NewsService.swift */,
+				BA44594E21B19006009FDE48 /* KeywordServiceProtocol.swift */,
+				BA44595021B19015009FDE48 /* KeywordService.swift */,
 				BA3859B421AB25EF00AD256C /* ServiceContainer.swift */,
 			);
 			path = APIServices;
@@ -381,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3859A421A9F59500AD256C /* CategoryCollectionViewCell.swift in Sources */,
+				BA44595121B19015009FDE48 /* KeywordService.swift in Sources */,
 				BA38599E21A9DE7000AD256C /* NewsServiceProtocol.swift in Sources */,
 				BA3859BD21AC7C8E00AD256C /* RateInitialNewsViewController.swift in Sources */,
 				BA3859AD21AAE56100AD256C /* UIViewControllerExtension.swift in Sources */,
@@ -395,7 +405,9 @@
 				BA3859B521AB25EF00AD256C /* ServiceContainer.swift in Sources */,
 				BAD0525321A341D10070A868 /* Constants.swift in Sources */,
 				BA3859B321AB173E00AD256C /* NewsService.swift in Sources */,
+				BAB1314D21B455D500097004 /* StringExtension.swift in Sources */,
 				BA3859C221AD67D200AD256C /* WebViewController.swift in Sources */,
+				BA44594F21B19006009FDE48 /* KeywordServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
