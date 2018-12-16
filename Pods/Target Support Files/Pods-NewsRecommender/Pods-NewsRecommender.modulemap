@@ -1,0 +1,6 @@
+framework module Pods_NewsRecommender {
+  umbrella header "Pods-NewsRecommender-umbrella.h"
+
+  export *
+  module * { export * }
+}
