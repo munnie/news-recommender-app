@@ -24,10 +24,11 @@
 		BA3859C221AD67D200AD256C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3859C121AD67D200AD256C /* WebViewController.swift */; };
 		BA44594F21B19006009FDE48 /* KeywordServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44594E21B19006009FDE48 /* KeywordServiceProtocol.swift */; };
 		BA44595121B19015009FDE48 /* KeywordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA44595021B19015009FDE48 /* KeywordService.swift */; };
+		BA488DE021C6666000EBE80D /* AllNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA488DDF21C6666000EBE80D /* AllNewsViewController.swift */; };
+		BA62D33621C3D52F00DC4B63 /* RecommendedNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA62D33521C3D52F00DC4B63 /* RecommendedNewsViewController.swift */; };
 		BAB1314D21B455D500097004 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB1314C21B455D500097004 /* StringExtension.swift */; };
+		BAB2008321B7C33100F00242 /* Recommender.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB2008221B7C33100F00242 /* Recommender.swift */; };
 		BAD0523E21A341710070A868 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0523D21A341710070A868 /* AppDelegate.swift */; };
-		BAD0524021A341710070A868 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0523F21A341710070A868 /* FirstViewController.swift */; };
-		BAD0524221A341710070A868 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0524121A341710070A868 /* SecondViewController.swift */; };
 		BAD0524521A341710070A868 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD0524321A341710070A868 /* Main.storyboard */; };
 		BAD0524721A341730070A868 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD0524621A341730070A868 /* Assets.xcassets */; };
 		BAD0524A21A341730070A868 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAD0524821A341730070A868 /* LaunchScreen.storyboard */; };
@@ -52,11 +53,12 @@
 		BA3859C121AD67D200AD256C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		BA44594E21B19006009FDE48 /* KeywordServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeywordServiceProtocol.swift; path = NewsRecommender/KeywordServiceProtocol.swift; sourceTree = SOURCE_ROOT; };
 		BA44595021B19015009FDE48 /* KeywordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordService.swift; sourceTree = "<group>"; };
+		BA488DDF21C6666000EBE80D /* AllNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsViewController.swift; sourceTree = "<group>"; };
+		BA62D33521C3D52F00DC4B63 /* RecommendedNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedNewsViewController.swift; sourceTree = "<group>"; };
 		BAB1314C21B455D500097004 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		BAB2008221B7C33100F00242 /* Recommender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommender.swift; sourceTree = "<group>"; };
 		BAD0523A21A341710070A868 /* NewsRecommender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsRecommender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD0523D21A341710070A868 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BAD0523F21A341710070A868 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		BAD0524121A341710070A868 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		BAD0524421A341710070A868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BAD0524621A341730070A868 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BAD0524921A341730070A868 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,8 @@
 			children = (
 				BA3859BC21AC7C8E00AD256C /* RateInitialNewsViewController.swift */,
 				BA3859C121AD67D200AD256C /* WebViewController.swift */,
+				BA62D33521C3D52F00DC4B63 /* RecommendedNewsViewController.swift */,
+				BA488DDF21C6666000EBE80D /* AllNewsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				BA3859BF21AD498800AD256C /* Preference.swift */,
+				BAB2008221B7C33100F00242 /* Recommender.swift */,
 			);
 			path = Recommender;
 			sourceTree = "<group>";
@@ -175,8 +180,6 @@
 				BAD0525421A343680070A868 /* APIServices */,
 				BAD0525121A3419B0070A868 /* AppConfig */,
 				BAD0523D21A341710070A868 /* AppDelegate.swift */,
-				BAD0523F21A341710070A868 /* FirstViewController.swift */,
-				BAD0524121A341710070A868 /* SecondViewController.swift */,
 				BAD0524321A341710070A868 /* Main.storyboard */,
 				BAD0524621A341730070A868 /* Assets.xcassets */,
 				BAD0524821A341730070A868 /* LaunchScreen.storyboard */,
@@ -336,6 +339,7 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
@@ -351,6 +355,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
@@ -394,16 +399,17 @@
 				BA38599E21A9DE7000AD256C /* NewsServiceProtocol.swift in Sources */,
 				BA3859BD21AC7C8E00AD256C /* RateInitialNewsViewController.swift in Sources */,
 				BA3859AD21AAE56100AD256C /* UIViewControllerExtension.swift in Sources */,
-				BAD0524221A341710070A868 /* SecondViewController.swift in Sources */,
 				BA3859B921AC792800AD256C /* NewsTableViewCell.swift in Sources */,
 				BA3859A021A9E00D00AD256C /* NewsCategory.swift in Sources */,
 				BA3859A221A9F51500AD256C /* PickCategoriesViewController.swift in Sources */,
 				BAD0523E21A341710070A868 /* AppDelegate.swift in Sources */,
-				BAD0524021A341710070A868 /* FirstViewController.swift in Sources */,
 				BA3859C021AD498800AD256C /* Preference.swift in Sources */,
 				BA3859B121AB118A00AD256C /* News.swift in Sources */,
+				BAB2008321B7C33100F00242 /* Recommender.swift in Sources */,
 				BA3859B521AB25EF00AD256C /* ServiceContainer.swift in Sources */,
+				BA488DE021C6666000EBE80D /* AllNewsViewController.swift in Sources */,
 				BAD0525321A341D10070A868 /* Constants.swift in Sources */,
+				BA62D33621C3D52F00DC4B63 /* RecommendedNewsViewController.swift in Sources */,
 				BA3859B321AB173E00AD256C /* NewsService.swift in Sources */,
 				BAB1314D21B455D500097004 /* StringExtension.swift in Sources */,
 				BA3859C221AD67D200AD256C /* WebViewController.swift in Sources */,

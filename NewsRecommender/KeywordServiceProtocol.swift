@@ -9,6 +9,6 @@
 import Foundation
 
 protocol KeywordServiceProtocol {
-    func getKeywords(text: String , onSuccess: @escaping (Array<String>) -> Void, onError: @escaping (Error) -> Void)
-     func getKeywords(texts: Array<String>, onSuccess: @escaping (Array<Array<(keyword: String, count: Int)>>) -> Void, onError: @escaping (Error) -> Void) 
+    func getKeywords(texts: Array<String>, onSuccess: @escaping (Array<Array<(keyword: String, count: Int)>>) -> Void, onError: @escaping (Error) -> Void)
+    func getKeywords(text: String, onSuccess: @escaping (Array<(keyword: String, count: Int)>) -> Void, onError: @escaping (Error) -> Void)
 }

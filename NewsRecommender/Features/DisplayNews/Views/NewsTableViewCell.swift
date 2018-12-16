@@ -42,6 +42,7 @@ class NewsTableViewCell: UITableViewCell {
     func loadData(news: News){
         self.news = news
         likeImageView?.tintColor = UIColor.white
+        dislikeImageView?.tintColor = UIColor.white
         imgView?.image = nil
         if let url = URL.init(string: news.urlToImage ?? ""){
             imgView?.af_setImage(withURL: url)

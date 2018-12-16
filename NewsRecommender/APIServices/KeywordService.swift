@@ -11,21 +11,16 @@ import Alamofire
 import AlamofireObjectMapper
 
 class KeywordService: KeywordServiceProtocol {
+    
+    static var cachedKeywords : [(text: String , keywords: [(keyword: String, count: Int)])] = []
+    
     func getKeywords(texts: Array<String>, onSuccess: @escaping (Array<Array<(keyword: String, count: Int)>>) -> Void, onError: @escaping (Error) -> Void) {
         var keywordsArray : Array<Array<(keyword: String, count: Int)>> = []
         var count = 0
         
         for text in texts{
             self.getKeywords(text: text, onSuccess: {keywords in
-                
-                var keywords_count : [(keyword: String, count: Int)] = []
-                for keyword in keywords{
-                    let keyword_count = text.countInstances(of: keyword)
-                    let result = (keyword: keyword, count : keyword_count)
-                    keywords_count.append(result)
-                }
-                
-                keywordsArray.append(keywords_count)
+                keywordsArray.append(keywords)
                 count += 1
                 if count == texts.count{
                     onSuccess(keywordsArray)
@@ -37,7 +32,12 @@ class KeywordService: KeywordServiceProtocol {
         
     }
     
-    func getKeywords(text: String, onSuccess: @escaping (Array<String>) -> Void, onError: @escaping (Error) -> Void) {
+    func getKeywords(text: String, onSuccess: @escaping (Array<(keyword: String, count: Int)>) -> Void, onError: @escaping (Error) -> Void) {
+        
+        if let cached = KeywordService.cachedKeywords.filter({$0.text == text}).first {
+            onSuccess(cached.keywords)
+            return
+        }
         
         let url = Constants.keywordBaseURL + Constants.extractkeyWordPath + "?retina_name=en_associative"
         var parameter : Dictionary<String, String> = [:]
@@ -61,9 +61,15 @@ class KeywordService: KeywordServiceProtocol {
                         onError(NSError.init(domain: "", code: 404, userInfo: nil))
                         return
                 }
+                var keywordsCountArray: [(keyword: String, count: Int)] = []
+                for keyword in data{
+                    let keyword_count = text.countInstances(of: keyword)
+                    let result = (keyword: keyword, count : keyword_count)
+                    keywordsCountArray.append(result)
+                }
                 
-               
-                onSuccess(data)
+                KeywordService.cachedKeywords.append((text: text, keywords: keywordsCountArray))
+                onSuccess(keywordsCountArray)
                 
             case .failure(let error):
                 onError(error)

@@ -15,4 +15,5 @@ target 'NewsRecommender' do
     pod 'AlamofireObjectMapper'
     pod "SkeletonView"
     pod 'AlamofireImage', '~> 3.4'
+    pod 'SVProgressHUD'
 end

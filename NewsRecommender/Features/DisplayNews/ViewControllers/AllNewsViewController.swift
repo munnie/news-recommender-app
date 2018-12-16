@@ -1,57 +1,51 @@
 //
-//  RateInitialNewsViewController.swift
+//  AllNewsViewController.swift
 //  NewsRecommender
 //
-//  Created by mun on 11/26/18.
+//  Created by mun on 12/16/18.
 //  Copyright © 2018 mun. All rights reserved.
 //
 
 import UIKit
 import SVProgressHUD
 
-class RateInitialNewsViewController: UIViewController {
+class AllNewsViewController: UIViewController {
     var pickedNews:Array<News> = []
     var allNews:Array<News> = []
     @IBOutlet var tableView: UITableView?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setUpNavigationbar()
         tableView?.register(UINib.init(nibName: "NewsTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "NewsTableViewCell")
         tableView?.rowHeight = UITableView.automaticDimension
         tableView?.estimatedRowHeight = 300
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        let categories = NewsCategoryManager.getSavedCategories()
         
-         SVProgressHUD.show()
-        ServicesContainer.shared.newsServices().getNews(categories:categories,limit:30,onSuccess: { [weak self] array in
-             SVProgressHUD.dismiss()
-                self?.allNews = array
-                self?.tableView?.reloadData()
+        ServicesContainer.shared.newsServices().getNews(category:"",limit:20,onSuccess: { [weak self] array in
+            self?.allNews = array
+            self?.tableView?.reloadData()
         }) { (error) in
             
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+       
+       
+    }
+    
     func setUpNavigationbar(){
-        self.navigationItem.title = "Rate some news"
-        let next = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
+        self.navigationItem.title = "Today's   news"
+        //let next = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
         
-        navigationItem.rightBarButtonItems = [next]
+        //navigationItem.rightBarButtonItems = [next]
     }
     
     @objc func doneTapped(){
         if pickedNews.count >= 1 {
-            SVProgressHUD.show()
-            KeywordPreferenceManager.processNews(newsArray: pickedNews, done: {
-                SVProgressHUD.dismiss()
-                self.navigationController?.presentingViewController?.dismiss(animated: true, completion: nil)
-                
-            })
+            KeywordPreferenceManager.processNews(newsArray: pickedNews, done: {})
         }
         else{
             let alert = UIAlertController.init(title: nil, message: "Please pick at least 5 news", preferredStyle: .alert)
@@ -60,21 +54,21 @@ class RateInitialNewsViewController: UIViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 
-extension RateInitialNewsViewController:UITableViewDataSource, UITableViewDelegate{
+extension AllNewsViewController:UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allNews.count
     }
@@ -107,16 +101,21 @@ extension RateInitialNewsViewController:UITableViewDataSource, UITableViewDelega
     
 }
 
-extension RateInitialNewsViewController: NewsTableViewCellDelegate{
+extension AllNewsViewController: NewsTableViewCellDelegate{
     func newsTableViewCellDidLikeNews(news: News?) {
         if let news = news{
-        if pickedNews.contains(where: {$0.titleText == news.titleText}){
-            pickedNews.removeAll(where: {$0.titleText == news.titleText})
-        }
-        else{
-            pickedNews.append(news)
-        }
-        tableView?.reloadData()
+            if pickedNews.contains(where: {$0.titleText == news.titleText}){
+                pickedNews.removeAll(where: {$0.titleText == news.titleText})
+                 KeywordPreferenceManager.unlikeNews(news: news)
+            }
+            else{
+                pickedNews.append(news)
+                SVProgressHUD.show()
+                 KeywordPreferenceManager.likeNews(news: news, done: {
+                    SVProgressHUD.dismiss()
+                 })
+            }
+            tableView?.reloadData()
             
             
             

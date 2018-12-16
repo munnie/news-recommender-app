@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else{
             let realm = try! Realm()
             let keyword = realm.objects(KeywordPreference.self)
-            if keyword.count == 0{
+            
+            if keyword.count == 0 && (keyword.map({$0.newsCount}).reduce(0, +) <= 0 ){
                 let vc = RateInitialNewsViewController.initWithStoryBoard(storyBoardName: "Main", identifier: "RateInitialNewsViewController") as! RateInitialNewsViewController
                 let nav = UINavigationController.init(rootViewController: vc)
                 nav.modalPresentationStyle = .fullScreen
@@ -40,7 +41,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
        
+//        ServicesContainer.shared.keywordServices().getKeywords(texts: ["'Worthless' Bitcoin Has Entered Death Spiral: Finance Professor Finance professor Atuyla Sarin wrote in an op-ed that the bitcoin price has entered a \"death spiral\" and that the crypto is \"close to worthless.\""],onSuccess: {  array in
+//            for news in array{
+//                let totalKeywordCount =  news.map({$0.count}).reduce(0, +)
+//            }}){ (error) in
+//                
+//        }
         
+        
+        UITabBar.appearance().tintColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         return true
     }
 

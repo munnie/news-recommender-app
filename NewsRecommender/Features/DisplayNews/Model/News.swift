@@ -25,4 +25,5 @@ struct News: Mappable {
     var descriptionText : String?
     var url: String?
     var urlToImage: String?
+    var cosineValue = 0.0
 }
